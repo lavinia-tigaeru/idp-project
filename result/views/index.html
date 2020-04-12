@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="catsvsdogs">
+  <head>
+    <meta charset="utf-8">
+    <title>Oscar winners</title>
+    <base href="/index.html">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <meta name="keywords" content="docker-compose, docker, stack">
+    <meta name="author" content="Docker">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body ng-controller="statsCtrl" >
+    <div class="row">
+      <div class="column" style="background-color:#fff;">
+        <h2>Best motion picture</h2>
+        <div class="img-container">
+          <img src="{{url1}}" height="350" width="350" style="border-style: solid; border-color: #4fc2e5;border-width: thick;"/>
+        </div>
+      </div>
+      <div class="column" style="background-color:#fff;">
+        <h2>Best adapted screenplay</h2>
+        <div class="img-container">
+          <img src="{{url2}}" height="350" width="350" style="border-style: solid; border-color: #5e9de6;border-width: thick;"/>
+        </div>
+      </div>
+      <div class="column" style="background-color:#fff;">
+        <h2>Best original screenplay</h2>
+        <div class="img-container">
+          <img src="{{url3}}" height="350" width="350" style="border-style: solid; border-color: #ad93e6;border-width: thick;"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column" style="background-color:#fff;">
+        <h2>Best leading actor</h2>
+        <div class="img-container">
+          <img src="{{url4}}" height="350" width="350" style="border-style: solid; border-color: #ffcd69;border-width: thick;"/>
+        </div>
+      </div>
+      <div class="column" style="background-color:#fff;">
+        <h2>Best leading actress</h2>
+        <div class="img-container">
+          <img src="{{url5}}" height="350" width="350" style="border-style: solid; border-color: #fc6d58;border-width: thick;"/>
+        </div>
+      </div>
+      <div class="column" style="background-color:#fff;">
+        <h2>Best director</h2>
+        <div class="img-container">
+          <img src="{{url6}}" height="350" width="350" style="border-style: solid; border-color: #ed5565;border-width: thick;"/>
+        </div>
+      </div>
+    </div>
+
+    <div id="result">
+      <span ng-if="total == 0">No votes yet</span>
+      <span ng-if="total == 1">{{total}} vote</span>
+      <span ng-if="total >= 2">{{total}} votes</span>
+    </div>
+    <script src="socket.io.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

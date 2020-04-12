@@ -1,0 +1,490 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+
+/**{
+  box-sizing:border-box;
+}*/
+html,body{
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  /*height: 100vh;*/
+  font-family: 'Open Sans';
+}
+
+/* Create 3 equal columns that float next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button{
+  border-radius: 0;
+  width: 100%;
+  height: 50%;
+}
+
+button[type="submit"] {
+  -webkit-appearance:none; -webkit-border-radius:0;
+}
+
+button i{
+  float: right;
+  padding-right: 30px;
+  margin-top: 3px;
+}
+
+button.sender {
+  background-color: #4CAF50; /* Green */
+  text-align: center;
+}
+
+button.bestmovie1{
+  background-color: #4fc2e5;
+}
+
+button.bestmovie2{
+  background-color: #4fc2e5;
+}
+
+button.bestmovie3{
+  background-color: #4fc2e5;
+}
+
+button.bestmovie4{
+  background-color: #4fc2e5;
+}
+
+button.bestmovie5{
+  background-color: #4fc2e5;
+}
+
+button.bestadapted1{
+  background-color: #5e9de6;
+}
+
+button.bestadapted2{
+  background-color: #5e9de6;
+}
+
+button.bestadapted3{
+  background-color: #5e9de6;
+}
+
+button.bestadapted4{
+  background-color: #5e9de6;
+}
+
+button.bestadapted5{
+  background-color: #5e9de6;
+}
+
+button.bestoriginal1{
+  background-color: #ad93e6;
+}
+
+button.bestoriginal2{
+  background-color: #ad93e6;
+}
+
+button.bestoriginal3{
+  background-color: #ad93e6;
+}
+
+button.bestoriginal4{
+  background-color: #ad93e6;
+}
+
+button.bestoriginal5{
+  background-color: #ad93e6;
+}
+
+button.bestactor1{
+  background-color: #ffcd69;
+}
+
+button.bestactor2{
+  background-color: #ffcd69;
+}
+
+button.bestactor3{
+  background-color: #ffcd69;
+}
+
+button.bestactor4{
+  background-color: #ffcd69;
+}
+
+button.bestactor5{
+  background-color: #ffcd69;
+}
+
+button.bestactress1{
+  background-color: #fc6d58;
+}
+
+button.bestactress2{
+  background-color: #fc6d58;
+}
+
+button.bestactress3{
+  background-color: #fc6d58;
+}
+
+button.bestactress4{
+  background-color: #fc6d58;
+}
+
+button.bestactress5{
+  background-color: #fc6d58;
+}
+
+button.bestdirector1{
+  background-color: #ed5565;
+}
+
+button.bestdirector2{
+  background-color: #ed5565;
+}
+
+button.bestdirector3{
+  background-color: #ed5565;
+}
+
+button.bestdirector4{
+  background-color: #ed5565;
+}
+
+button.bestdirector5{
+  background-color: #ed5565;
+}
+
+#tip{
+  text-align: left;
+  color: #c0c9ce;
+  font-size: 14px;
+}
+
+#hostname{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: rgb(211, 171, 73);
+  opacity: 1;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+#content-container{
+  display: flex;
+  justify-content: center;
+}
+
+#content-container-center{
+  display: table-cell;
+  text-align: center;
+  align-self: center;
+}
+
+#content-container-center h3{
+  color: #254356;
+}
+
+#choice{
+  transition: all 300ms linear;
+  line-height: 1.3em;
+  display: inline;
+  vertical-align: middle;
+  font-size: 3em;
+}
+#choice a{
+  text-decoration:none;
+}
+#choice a:hover, #choice a:focus{
+  outline:0;
+  text-decoration:underline;
+}
+
+#choice button{
+  display: block;
+  height: 50px;
+  width: 340px;
+  border: none;
+  color: white;
+  text-transform: none;
+  font-size:18px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  padding-left: 40px;
+}
+
+#choice button.bestmovie1:hover{
+  background-color: #3bb0d6;
+}
+
+#choice button.bestmovie2:hover{
+  background-color: #3bb0d6;
+}
+
+#choice button.bestmovie3:hover{
+  background-color: #3bb0d6;
+}
+
+#choice button.bestmovie4:hover{
+  background-color: #3bb0d6;
+}
+
+#choice button.bestmovie5:hover{
+  background-color: #3bb0d6;
+}
+
+#choice button.bestadapted1:hover{
+  background-color: #4b8ad6;
+}
+
+#choice button.bestadapted2:hover{
+  background-color: #4b8ad6;
+}
+
+#choice button.bestadapted3:hover{
+  background-color: #4b8ad6;
+}
+
+#choice button.bestadapted4:hover{
+  background-color: #4b8ad6;
+}
+
+#choice button.bestadapted5:hover{
+  background-color: #4b8ad6;
+}
+
+#choice button.bestoriginal1:hover{
+  background-color: #977bd5;
+}
+
+#choice button.bestoriginal2:hover{
+  background-color: #977bd5;
+}
+
+#choice button.bestoriginal3:hover{
+  background-color: #977bd5;
+}
+
+#choice button.bestoriginal4:hover{
+  background-color: #977bd5;
+}
+
+#choice button.bestoriginal5:hover{
+  background-color: #977bd5;
+}
+
+#choice button.bestactor1:hover{
+  background-color: #f6ba59;
+}
+
+#choice button.bestactor2:hover{
+  background-color: #f6ba59;
+}
+
+#choice button.bestactor3:hover{
+  background-color: #f6ba59;
+}
+
+#choice button.bestactor4:hover{
+  background-color: #f6ba59;
+}
+
+#choice button.bestactor5:hover{
+  background-color: #f6ba59;
+}
+
+#choice button.bestactress1:hover{
+  background-color: #e95546;
+}
+
+#choice button.bestactress2:hover{
+  background-color: #e95546;
+}
+
+#choice button.bestactress3:hover{
+  background-color: #e95546;
+}
+
+#choice button.bestactress4:hover{
+  background-color: #e95546;
+}
+
+#choice button.bestactress5:hover{
+  background-color: #e95546;
+}
+
+#choice button.bestdirector1:hover{
+  background-color: #da4453;
+}
+
+#choice button.bestdirector2:hover{
+  background-color: #da4453;
+}
+
+#choice button.bestdirector3:hover{
+  background-color: #da4453;
+}
+
+#choice button.bestdirector4:hover{
+  background-color: #da4453;
+}
+
+#choice button.bestdirector5:hover{
+  background-color: #da4453;
+}
+
+/*------------------------------*/
+
+#choice button.bestmovie1:focus{
+  background-color: #3bb0d6;
+}
+
+#choice button.bestmovie2:focus{
+  background-color: #3bb0d6;
+}
+
+#choice button.bestmovie3:focus{
+  background-color: #3bb0d6;
+}
+
+#choice button.bestmovie4:focus{
+  background-color: #3bb0d6;
+}
+
+#choice button.bestmovie5:focus{
+  background-color: #3bb0d6;
+}
+
+#choice button.bestadapted1:focus{
+  background-color: #4b8ad6;
+}
+
+#choice button.bestadapted2:focus{
+  background-color: #4b8ad6;
+}
+
+#choice button.bestadapted3:focus{
+  background-color: #4b8ad6;
+}
+
+#choice button.bestadapted4:focus{
+  background-color: #4b8ad6;
+}
+
+#choice button.bestadapted5:focus{
+  background-color: #4b8ad6;
+}
+
+#choice button.bestoriginal1:focus{
+  background-color: #977bd5;
+}
+
+#choice button.bestoriginal2:focus{
+  background-color: #977bd5;
+}
+
+#choice button.bestoriginal3:focus{
+  background-color: #977bd5;
+}
+
+#choice button.bestoriginal4:focus{
+  background-color: #977bd5;
+}
+
+#choice button.bestoriginal5:focus{
+  background-color: #977bd5;
+}
+
+#choice button.bestactor1:focus{
+  background-color: #f6ba59;
+}
+
+#choice button.bestactor2:focus{
+  background-color: #f6ba59;
+}
+
+#choice button.bestactor3:focus{
+  background-color: #f6ba59;
+}
+
+#choice button.bestactor4:focus{
+  background-color: #f6ba59;
+}
+
+#choice button.bestactor5:focus{
+  background-color: #f6ba59;
+}
+
+#choice button.bestactress1:focus{
+  background-color: #e95546;
+}
+
+#choice button.bestactress2:focus{
+  background-color: #e95546;
+}
+
+#choice button.bestactress3:focus{
+  background-color: #e95546;
+}
+
+#choice button.bestactress4:focus{
+  background-color: #e95546;
+}
+
+#choice button.bestactress5:focus{
+  background-color: #e95546;
+}
+
+#choice button.bestdirector1:focus{
+  background-color: #da4453;
+}
+
+#choice button.bestdirector2:focus{
+  background-color: #da4453;
+}
+
+#choice button.bestdirector3:focus{
+  background-color: #da4453;
+}
+
+#choice button.bestdirector4:focus{
+  background-color: #da4453;
+}
+
+#choice button.bestdirector5:focus{
+  background-color: #da4453;
+}
+
+#background-stats{
+  z-index:1;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+#background-stats div{
+  transition: width 400ms ease-in-out;
+  display:inline-block;
+  margin-bottom:-4px;
+  width:50%;
+  height:100%;
+}

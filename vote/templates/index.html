@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Oscar nominees</title>
+    <base href="/index.html">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+    <meta name="keywords" content="docker-compose, docker, stack">
+    <meta name="author" content="Tutum dev team">
+    <style type="text/css">
+      div.sendButton {
+        border-radius: 0;
+        background-color: #4CAF50;
+        width: 70px;
+        height: 30px;
+        text-align: center;
+      }
+    </style>
+    <link rel='stylesheet' href="{{ url_for('static',filename='stylesheets/style.css') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+    <div class="row">
+      <div class="column" style="background-color:#fff;">
+        <div id="content-container">
+          <div id="content-container-center">
+            <h2>{{category_1}}</h2>
+            <div id="choice">
+              <button id="11" type="button" onclick="registerVote(this.id)" class="bestmovie1" value="a">{{option_11}}</button>
+              <button id="12" type="button" onclick="registerVote(this.id)" class="bestmovie2" value="b">{{option_12}}</button>
+              <button id="13" type="button" onclick="registerVote(this.id)" class="bestmovie3" value="c">{{option_13}}</button>
+              <button id="14" type="button" onclick="registerVote(this.id)" class="bestmovie4" value="d">{{option_14}}</button>
+              <button id="15" type="button" onclick="registerVote(this.id)" class="bestmovie5" value="e">{{option_15}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column" style="background-color:#fff;">
+        <div id="content-container">
+          <div id="content-container-center">
+            <h2>{{category_2}}</h2>
+            <div id="choice">
+              <button id="21" type="button" onclick="registerVote(this.id)" class="bestadapted1" value="a">{{option_21}}</button>
+              <button id="22" type="button" onclick="registerVote(this.id)" class="bestadapted2" value="b">{{option_22}}</button>
+              <button id="23" type="button" onclick="registerVote(this.id)" class="bestadapted3" value="c">{{option_23}}</button>
+              <button id="24" type="button" onclick="registerVote(this.id)" class="bestadapted4" value="d">{{option_24}}</button>
+              <button id="25" type="button" onclick="registerVote(this.id)" class="bestadapted5" value="e">{{option_25}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column" style="background-color:#fff;">
+        <div id="content-container">
+          <div id="content-container-center">
+            <h2>{{category_3}}</h2>
+            <div id="choice">
+              <button id="31" type="button" onclick="registerVote(this.id)" class="bestoriginal1" value="a">{{option_31}}</button>
+              <button id="32" type="button" onclick="registerVote(this.id)" class="bestoriginal2" value="b">{{option_32}}</button>
+              <button id="33" type="button" onclick="registerVote(this.id)" class="bestoriginal3" value="c">{{option_33}}</button>
+              <button id="34" type="button" onclick="registerVote(this.id)" class="bestoriginal4" value="d">{{option_34}}</button>
+              <button id="35" type="button" onclick="registerVote(this.id)" class="bestoriginal5" value="e">{{option_35}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column" style="background-color:#fff;">
+        <div id="content-container">
+          <div id="content-container-center">
+            <h2>{{category_4}}</h2>
+            <div id="choice">
+              <button id="41" type="button" onclick="registerVote(this.id)" class="bestactor1" value="a">{{option_41}}</button>
+              <button id="42" type="button" onclick="registerVote(this.id)" class="bestactor2" value="b">{{option_42}}</button>
+              <button id="43" type="button" onclick="registerVote(this.id)" class="bestactor3" value="c">{{option_43}}</button>
+              <button id="44" type="button" onclick="registerVote(this.id)" class="bestactor4" value="d">{{option_44}}</button>
+              <button id="45" type="button" onclick="registerVote(this.id)" class="bestactor5" value="e">{{option_45}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column" style="background-color:#fff;">
+        <div id="content-container">
+          <div id="content-container-center">
+            <h2>{{category_5}}</h2>
+            <div id="choice">
+              <button id="51" type="button" onclick="registerVote(this.id)" class="bestactress1" value="a">{{option_51}}</button>
+              <button id="52" type="button" onclick="registerVote(this.id)" class="bestactress2" value="b">{{option_52}}</button>
+              <button id="53" type="button" onclick="registerVote(this.id)" class="bestactress3" value="c">{{option_53}}</button>
+              <button id="54" type="button" onclick="registerVote(this.id)" class="bestactress4" value="d">{{option_54}}</button>
+              <button id="55" type="button" onclick="registerVote(this.id)" class="bestactress5" value="e">{{option_55}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column" style="background-color:#fff;">
+        <div id="content-container">
+          <div id="content-container-center">
+            <h2>{{category_6}}</h2>
+            <div id="choice">
+              <button id="61" type="button" onclick="registerVote(this.id)" class="bestdirector1" value="a">{{option_61}}</button>
+              <button id="62" type="button" onclick="registerVote(this.id)" class="bestdirector2" value="b">{{option_62}}</button>
+              <button id="63" type="button" onclick="registerVote(this.id)" class="bestdirector3" value="c">{{option_63}}</button>
+              <button id="64" type="button" onclick="registerVote(this.id)" class="bestdirector4" value="d">{{option_64}}</button>
+              <button id="65" type="button" onclick="registerVote(this.id)" class="bestdirector5" value="e">{{option_65}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column" style="background-color:#fff;">
+        <div id="content-container"></div>
+      </div>
+      <div class="column" style="background-color:#fff;">
+        <div id="content-container">
+          <div id="content-container-center">
+            <form id="choice" name='form' method="POST" action="/">
+              <button id="101" type="submit" name="vote" style="width:120px; padding-left: 0%; background-color: #d870a9; text-align:center; vertical-align:middle" value="">SEND</button>
+              <input id="catAvote" type="hidden" name="categoryA" value="">
+              <input id="catBvote" type="hidden" name="categoryB" value="">
+              <input id="catCvote" type="hidden" name="categoryC" value="">
+              <input id="catDvote" type="hidden" name="categoryD" value="">
+              <input id="catEvote" type="hidden" name="categoryE" value="">
+              <input id="catFvote" type="hidden" name="categoryF" value="">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="column" style="background-color:#fff;">
+        <div id="content-container">
+          <div id="hostname">ID: {{hostname}}</div>
+        </div>
+      </div>
+    </div>
+    
+
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <script>
+      function registerVote(clicked_id){
+        //category A
+        if (clicked_id == "11") {
+            document.getElementById("catAvote").value = document.getElementById(clicked_id).value;
+            $(".bestmovie1").html('{{option_11}} <i class="fa fa-check-circle"></i>');
+            $(".bestmovie2").html('{{option_12}}');
+            $(".bestmovie3").html('{{option_13}}');
+            $(".bestmovie4").html('{{option_14}}');
+            $(".bestmovie5").html('{{option_15}}');
+        }
+        if (clicked_id == "12") {
+            document.getElementById("catAvote").value = document.getElementById(clicked_id).value;
+            $(".bestmovie1").html('{{option_11}}');
+            $(".bestmovie2").html('{{option_12}} <i class="fa fa-check-circle"></i>');
+            $(".bestmovie3").html('{{option_13}}');
+            $(".bestmovie4").html('{{option_14}}');
+            $(".bestmovie5").html('{{option_15}}');
+        }
+        if (clicked_id == "13") {
+            document.getElementById("catAvote").value = document.getElementById(clicked_id).value;
+            $(".bestmovie1").html('{{option_11}}');
+            $(".bestmovie2").html('{{option_12}}');
+            $(".bestmovie3").html('{{option_13}} <i class="fa fa-check-circle"></i>');
+            $(".bestmovie4").html('{{option_14}}');
+            $(".bestmovie5").html('{{option_15}}');
+        }
+        if (clicked_id == "14") {
+            document.getElementById("catAvote").value = document.getElementById(clicked_id).value;
+            $(".bestmovie1").html('{{option_11}}');
+            $(".bestmovie2").html('{{option_12}}');
+            $(".bestmovie3").html('{{option_13}}');
+            $(".bestmovie4").html('{{option_14}} <i class="fa fa-check-circle"></i>');
+            $(".bestmovie5").html('{{option_15}}');
+        }
+        if (clicked_id == "15") {
+            document.getElementById("catAvote").value = document.getElementById(clicked_id).value;
+            $(".bestmovie1").html('{{option_11}}');
+            $(".bestmovie2").html('{{option_12}}');
+            $(".bestmovie3").html('{{option_13}}');
+            $(".bestmovie4").html('{{option_14}}');
+            $(".bestmovie5").html('{{option_15}} <i class="fa fa-check-circle"></i>');
+        }
+        //category B
+        if (clicked_id == "21") {
+            document.getElementById("catBvote").value = document.getElementById(clicked_id).value;
+            $(".bestadapted1").html('{{option_21}} <i class="fa fa-check-circle"></i>');
+            $(".bestadapted2").html('{{option_22}}');
+            $(".bestadapted3").html('{{option_23}}');
+            $(".bestadapted4").html('{{option_24}}');
+            $(".bestadapted5").html('{{option_25}}');
+        }
+        if (clicked_id == "22") {
+            document.getElementById("catBvote").value = document.getElementById(clicked_id).value;
+            $(".bestadapted1").html('{{option_21}}');
+            $(".bestadapted2").html('{{option_22}} <i class="fa fa-check-circle"></i>');
+            $(".bestadapted3").html('{{option_23}}');
+            $(".bestadapted4").html('{{option_24}}');
+            $(".bestadapted5").html('{{option_25}}');
+        }
+        if (clicked_id == "23") {
+            document.getElementById("catBvote").value = document.getElementById(clicked_id).value;
+            $(".bestadapted1").html('{{option_21}}');
+            $(".bestadapted2").html('{{option_22}}');
+            $(".bestadapted3").html('{{option_23}} <i class="fa fa-check-circle"></i>');
+            $(".bestadapted4").html('{{option_24}}');
+            $(".bestadapted5").html('{{option_25}}');
+        }
+        if (clicked_id == "24") {
+            document.getElementById("catBvote").value = document.getElementById(clicked_id).value;
+            $(".bestadapted1").html('{{option_21}}');
+            $(".bestadapted2").html('{{option_22}}');
+            $(".bestadapted3").html('{{option_23}}');
+            $(".bestadapted4").html('{{option_24}} <i class="fa fa-check-circle"></i>');
+            $(".bestadapted5").html('{{option_25}}');
+        }
+        if (clicked_id == "25") {
+            document.getElementById("catBvote").value = document.getElementById(clicked_id).value;
+            $(".bestadapted1").html('{{option_21}}');
+            $(".bestadapted2").html('{{option_22}}');
+            $(".bestadapted3").html('{{option_23}}');
+            $(".bestadapted4").html('{{option_24}}');
+            $(".bestadapted5").html('{{option_25}} <i class="fa fa-check-circle"></i>');
+        }
+        //category C
+        if (clicked_id == "31") {
+            document.getElementById("catCvote").value = document.getElementById(clicked_id).value;
+            $(".bestoriginal1").html('{{option_31}} <i class="fa fa-check-circle"></i>');
+            $(".bestoriginal2").html('{{option_32}}');
+            $(".bestoriginal3").html('{{option_33}}');
+            $(".bestoriginal4").html('{{option_34}}');
+            $(".bestoriginal5").html('{{option_35}}');
+        }
+        if (clicked_id == "32") {
+            document.getElementById("catCvote").value = document.getElementById(clicked_id).value;
+            $(".bestoriginal1").html('{{option_31}}');
+            $(".bestoriginal2").html('{{option_32}} <i class="fa fa-check-circle"></i>');
+            $(".bestoriginal3").html('{{option_33}}');
+            $(".bestoriginal4").html('{{option_34}}');
+            $(".bestoriginal5").html('{{option_35}}');
+        }
+        if (clicked_id == "33") {
+            document.getElementById("catCvote").value = document.getElementById(clicked_id).value;
+            $(".bestoriginal1").html('{{option_31}}');
+            $(".bestoriginal2").html('{{option_32}}');
+            $(".bestoriginal3").html('{{option_33}} <i class="fa fa-check-circle"></i>');
+            $(".bestoriginal4").html('{{option_34}}');
+            $(".bestoriginal5").html('{{option_35}}');
+        }
+        if (clicked_id == "34") {
+            document.getElementById("catCvote").value = document.getElementById(clicked_id).value;
+            $(".bestoriginal1").html('{{option_31}}');
+            $(".bestoriginal2").html('{{option_32}}');
+            $(".bestoriginal3").html('{{option_33}}');
+            $(".bestoriginal4").html('{{option_34}} <i class="fa fa-check-circle"></i>');
+            $(".bestoriginal5").html('{{option_35}}');
+        }
+        if (clicked_id == "35") {
+            document.getElementById("catCvote").value = document.getElementById(clicked_id).value;
+            $(".bestoriginal1").html('{{option_31}}');
+            $(".bestoriginal2").html('{{option_32}}');
+            $(".bestoriginal3").html('{{option_33}}');
+            $(".bestoriginal4").html('{{option_34}}');
+            $(".bestoriginal5").html('{{option_35}} <i class="fa fa-check-circle"></i>');
+        }
+        //category D
+        if (clicked_id == "41") {
+            document.getElementById("catDvote").value = document.getElementById(clicked_id).value;
+            $(".bestactor1").html('{{option_41}} <i class="fa fa-check-circle"></i>');
+            $(".bestactor2").html('{{option_42}}');
+            $(".bestactor3").html('{{option_43}}');
+            $(".bestactor4").html('{{option_44}}');
+            $(".bestactor5").html('{{option_45}}');
+        }
+        if (clicked_id == "42") {
+            document.getElementById("catDvote").value = document.getElementById(clicked_id).value;
+            $(".bestactor1").html('{{option_41}}');
+            $(".bestactor2").html('{{option_42}} <i class="fa fa-check-circle"></i>');
+            $(".bestactor3").html('{{option_43}}');
+            $(".bestactor4").html('{{option_44}}');
+            $(".bestactor5").html('{{option_45}}');
+        }
+        if (clicked_id == "43") {
+            document.getElementById("catDvote").value = document.getElementById(clicked_id).value;
+            $(".bestactor1").html('{{option_41}}');
+            $(".bestactor2").html('{{option_42}}');
+            $(".bestactor3").html('{{option_43}} <i class="fa fa-check-circle"></i>');
+            $(".bestactor4").html('{{option_44}}');
+            $(".bestactor5").html('{{option_45}}');
+        }
+        if (clicked_id == "44") {
+            document.getElementById("catDvote").value = document.getElementById(clicked_id).value;
+            $(".bestactor1").html('{{option_41}}');
+            $(".bestactor2").html('{{option_42}}');
+            $(".bestactor3").html('{{option_43}}');
+            $(".bestactor4").html('{{option_44}} <i class="fa fa-check-circle"></i>');
+            $(".bestactor5").html('{{option_45}}');
+        }
+        if (clicked_id == "45") {
+            document.getElementById("catDvote").value = document.getElementById(clicked_id).value;
+            $(".bestactor1").html('{{option_41}}');
+            $(".bestactor2").html('{{option_42}}');
+            $(".bestactor3").html('{{option_43}}');
+            $(".bestactor4").html('{{option_44}}');
+            $(".bestactor5").html('{{option_45}} <i class="fa fa-check-circle"></i>');
+        }
+        //category E
+        if (clicked_id == "51") {
+            document.getElementById("catEvote").value = document.getElementById(clicked_id).value;
+            $(".bestactress1").html('{{option_51}} <i class="fa fa-check-circle"></i>');
+            $(".bestactress2").html('{{option_52}}');
+            $(".bestactress3").html('{{option_53}}');
+            $(".bestactress4").html('{{option_54}}');
+            $(".bestactress5").html('{{option_55}}');
+        }
+        if (clicked_id == "52") {
+            document.getElementById("catEvote").value = document.getElementById(clicked_id).value;
+            $(".bestactress1").html('{{option_51}}');
+            $(".bestactress2").html('{{option_52}} <i class="fa fa-check-circle"></i>');
+            $(".bestactress3").html('{{option_53}}');
+            $(".bestactress4").html('{{option_54}}');
+            $(".bestactress5").html('{{option_55}}');
+        }
+        if (clicked_id == "53") {
+            document.getElementById("catEvote").value = document.getElementById(clicked_id).value;
+            $(".bestactress1").html('{{option_51}}');
+            $(".bestactress2").html('{{option_52}}');
+            $(".bestactress3").html('{{option_53}} <i class="fa fa-check-circle"></i>');
+            $(".bestactress4").html('{{option_54}}');
+            $(".bestactress5").html('{{option_55}}');
+        }
+        if (clicked_id == "54") {
+            document.getElementById("catEvote").value = document.getElementById(clicked_id).value;
+            $(".bestactress1").html('{{option_51}}');
+            $(".bestactress2").html('{{option_52}}');
+            $(".bestactress3").html('{{option_53}}');
+            $(".bestactress4").html('{{option_54}} <i class="fa fa-check-circle"></i>');
+            $(".bestactress5").html('{{option_55}}');
+        }
+        if (clicked_id == "55") {
+            document.getElementById("catEvote").value = document.getElementById(clicked_id).value;
+            $(".bestactress1").html('{{option_51}}');
+            $(".bestactress2").html('{{option_52}}');
+            $(".bestactress3").html('{{option_53}}');
+            $(".bestactress4").html('{{option_54}}');
+            $(".bestactress5").html('{{option_55}} <i class="fa fa-check-circle"></i>');
+        }
+        //category F
+        if (clicked_id == "61") {
+            document.getElementById("catFvote").value = document.getElementById(clicked_id).value;
+            $(".bestdirector1").html('{{option_61}} <i class="fa fa-check-circle"></i>');
+            $(".bestdirector2").html('{{option_62}}');
+            $(".bestdirector3").html('{{option_63}}');
+            $(".bestdirector4").html('{{option_64}}');
+            $(".bestdirector5").html('{{option_65}}');
+        }
+        if (clicked_id == "62") {
+            document.getElementById("catFvote").value = document.getElementById(clicked_id).value;
+            $(".bestdirector1").html('{{option_61}}');
+            $(".bestdirector2").html('{{option_62}} <i class="fa fa-check-circle"></i>');
+            $(".bestdirector3").html('{{option_63}}');
+            $(".bestdirector4").html('{{option_64}}');
+            $(".bestdirector5").html('{{option_65}}');
+        }
+        if (clicked_id == "63") {
+            document.getElementById("catFvote").value = document.getElementById(clicked_id).value;
+            $(".bestdirector1").html('{{option_61}}');
+            $(".bestdirector2").html('{{option_62}}');
+            $(".bestdirector3").html('{{option_63}} <i class="fa fa-check-circle"></i>');
+            $(".bestdirector4").html('{{option_64}}');
+            $(".bestdirector5").html('{{option_65}}');
+        }
+        if (clicked_id == "64") {
+            document.getElementById("catFvote").value = document.getElementById(clicked_id).value;
+            $(".bestdirector1").html('{{option_61}}');
+            $(".bestdirector2").html('{{option_62}}');
+            $(".bestdirector3").html('{{option_63}}');
+            $(".bestdirector4").html('{{option_64}} <i class="fa fa-check-circle"></i>');
+            $(".bestdirector5").html('{{option_65}}');
+        }
+        if (clicked_id == "65") {
+            document.getElementById("catFvote").value = document.getElementById(clicked_id).value;
+            $(".bestdirector1").html('{{option_61}}');
+            $(".bestdirector2").html('{{option_62}}');
+            $(".bestdirector3").html('{{option_63}}');
+            $(".bestdirector4").html('{{option_64}}');
+            $(".bestdirector5").html('{{option_65}} <i class="fa fa-check-circle"></i>');
+        }
+      }
+    </script>
+  </body>
+</html>

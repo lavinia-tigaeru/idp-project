@@ -1,0 +1,33 @@
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><>< Oscars voting app ><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>
+<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
+
+The Linux stack uses Python, Node.js, Java, with Redis for messaging and Postgres for storage.
+
+- For creating the services stack with build options, rename docker-compose-up.yml to docker-compose.yml, then run the next command in this directory:
+
+>>> docker-compose up
+>>> http://localhost:5000 -> voting interface
+>>> http://localhost:5001 -> results interface
+
+- For creating the services stack using existent images, use docker-stack.yml:
+- Create a swarm if you don't have one:
+
+>>> docker swarm init
+
+- Run this in the current directory:
+
+>>> docker stack deploy -c docker-compose.yml idp-project
+>>> docker stack services ls -> verify instances
+>>> http://127.0.0.1:5000 -> voting interface
+>>> http://127.0.0.1:5001 -> results interface
+>>> http://127.0.0.1:9090 -> monitoriring with Prometheus
+
+Architecture
+-----
+* A front-end web app in [Python](/vote) which lets you vote one winner per category. The SEND button submits the votes.
+* A [Redis](https://hub.docker.com/_/redis/) queue which collects new votes
+* A [Java](/worker/src/main) worker which consumes votes and stores them in…
+* A [Postgres](https://hub.docker.com/_/postgres/) database backed by a Docker volume
+* A [Node.js](/result) webapp which shows the results of the voting in real time.
+
